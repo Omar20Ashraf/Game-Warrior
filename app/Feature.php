@@ -14,4 +14,10 @@ class Feature extends Model
 
     	return $this->belongsTO(MainPage::class);
     } 
-}
+
+    public function featureComment()
+    {
+
+    	return $this->hasMany(FeaturesComments::class);
+    }
+ }

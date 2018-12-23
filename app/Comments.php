@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comments extends Model
 {
+	// protected $guarded=[];
 
-    public function posts()
+    public function features()
     {
 
-    	return $this->belongsTo(Comments::class);
+    	return $this->belongsTo(Feature::class);
     } 
 }

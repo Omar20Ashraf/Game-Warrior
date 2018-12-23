@@ -11,5 +11,12 @@ class RecentReview extends Model
     public function mainpage(){
 
     	return $this->belongsTO(MainPage::class);
+    }
+
+    public function recentReviewcomment()
+    {
+
+    	return $this->hasMany(RecentReviewComments::class);
     } 
+
 }

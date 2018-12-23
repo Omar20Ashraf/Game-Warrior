@@ -12,5 +12,11 @@ class Games extends Model
     {
 
     	return $this->belongsTO(GamePage::class);
-    } 
+    }
+
+    public function gamecomment()
+    {
+
+    	return $this->hasMany(GamesComments::class);
+    }      
 }

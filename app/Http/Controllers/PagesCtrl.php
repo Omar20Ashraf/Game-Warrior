@@ -46,9 +46,9 @@ class PagesCtrl extends Controller
         $recentgames=RecentGame::all();
         $tournaments=Tournaments::all();
         $recentreviews=RecentReview::all();
-    	return view('pages.index',
-                compact('products','features','recentgames','tournaments',
-                        'recentreviews'));
+
+    	return view('pages.index',compact('products','features','recentgames',
+                    'tournaments','recentreviews'));
     }
 
     public function games()
@@ -102,12 +102,6 @@ class PagesCtrl extends Controller
               send(new ContactUs($name, $email, $subject, $body));
 
         return redirect('/contact')->with('success','Message Send Successfully');      
-    }
-
-    public function singleGameLayout($id){
-        $products=Feature::find($id);
-        $items=BlogSidebar::all();
-        return view('index-page.single-game-layout',compact('products','items'));        
     }
 
 }

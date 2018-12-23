@@ -13,4 +13,10 @@ class BlogGame extends Model
 
     	return $this->belongsTO(BlogPage::class);
     } 
+
+    public function blogGamesComment()
+    {
+
+    	return $this->hasMany(BlogGamesComments::class);
+    }    
 }

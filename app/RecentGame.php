@@ -14,4 +14,11 @@ class RecentGame extends Model
 
     	return $this->belongsTO(MainPage::class);
     }
+
+    public function recentGamecomment()
+    {
+
+    	return $this->hasMany(RecentGameComments::class);
+    } 
+       
 }

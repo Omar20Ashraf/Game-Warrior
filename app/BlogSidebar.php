@@ -12,5 +12,12 @@ class BlogSidebar extends Model
     {
 
     	return $this->belongsTO(BlogPage::class);
-    } 
+    }
+
+    public function blogSidebarComment()
+    {
+
+    	return $this->hasMany(BlogSidebarComments::class);
+    }
+
 }

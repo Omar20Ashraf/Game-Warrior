@@ -30,4 +30,20 @@ class User extends Authenticatable
     public function isAdmin(){
         return $this->admin;
     }
+
+    public function featurescomments(){
+        return $this->hasMany(FeaturesComments::class);
+    }
+
+    public function recentgamecomments(){
+       return $this->hasMany(RecentGameComments::class);
+    } 
+
+    public function recentreviewcomments(){
+       return $this->hasMany(RecentReviewComments::class);
+    }
+
+    public function blogGamecomments(){
+       return $this->hasMany(BlogGamesComments::class);
+    }                
 }
