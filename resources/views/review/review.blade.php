@@ -9,7 +9,9 @@
 					</div>
 				</div>
 				<div class="review-text">
-					<h5>{{$recentreview->title}}</h5>
+					<a href="index/recentreview/{{$recentreview->id}}">
+						<h5>{{$recentreview->title}}</h5>
+					</a>	
 					<p>{{$recentreview->par}}</p>
 				</div>
 			</div>

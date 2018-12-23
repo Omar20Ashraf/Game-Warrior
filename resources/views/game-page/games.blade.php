@@ -11,7 +11,9 @@
 							<div class="score yellow">{{$game->review}}</div>
 						</div>
 						<div class="review-text">
-							<h4>{{$game->name}}</h4>
+							<a href="/game/games/{{$game->id}}">
+								<h4>{{$game->name}}</h4>
+							</a>
 							<div class="rating">
 								<i class="fa fa-star"></i>
 								<i class="fa fa-star"></i>

@@ -1,4 +1,5 @@
 @extends('admin.layout.admin')
 @section('content')
-    <h3>Admin</h3>
+
+    <h1>Welcome To Admin Page</h1>
 @endsection

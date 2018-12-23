@@ -12,12 +12,14 @@
 						</span>
 						<div class="fi-content text-white">
 							<h5>
-								<a href="/index/{{$feature->id}}">
+								<a href="/index/feature/{{$feature->id}}">
 								{{$feature->title}}
 								</a>
 							</h5>
 							<p>{{$feature->par}} </p>
-							<a href="#" class="fi-comment">3 Comments</a>
+							<p class="fi-comment">
+								{{ $feature->featureComment->count() }} Comment
+							</p>
 						</div>
 					</div>
 				</div>

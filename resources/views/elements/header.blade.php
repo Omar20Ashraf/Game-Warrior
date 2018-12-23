@@ -1,4 +1,4 @@
-	
+
 <!-- Page Preloder -->
 <div id="preloder">
 	<div class="loader"></div>
@@ -20,30 +20,13 @@
                 /
                 <a href="{{ route('register') }}">Register</a>
             @else
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="
-                    	dropdown" role="button" aria-expanded="false">
+
+                    <span>
                         {{ Auth::user()->name }} 
                         <span class="caret"></span>
-                    </a>
-
-                    <ul class="dropdown-menu" role="menu">
-                        <li>
-                            <a href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                document.getElementById('logout-form')
-                                .submit();">
-                                Logout
-                            </a>
-
-                            <form id="logout-form" action="{{ 
-                            	  route('logout') }}" method="POST" 
-                            	  style="display: none;">
-                            {{ csrf_field() }}
-                            </form>
-                        </li>
-                    </ul>
-            	</li>
+                    </span>
+                    /
+                    <a href="{{url('/logout')}}">Logout</a>
             @endif
         </div>		
 
@@ -68,3 +51,5 @@
 <!-- game info section -->
 	@include('pages.latest_news')	
 <!-- game info section -->
+
+

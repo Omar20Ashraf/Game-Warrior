@@ -1,5 +1,5 @@
 	<!-- Footer top section -->
-	<section class="footer-top-section">
+{{-- 	<section class="footer-top-section">
 		<div class="container">
 			<div class="footer-top-bg">
 				<img src="{{ url('img/footer-top-bg.png') }}" alt="">
@@ -79,8 +79,8 @@
 				</div>
 			</div>
 		</div>
-	</section>
-	<!-- Footer top section end -->
+	</section> --}}
+	{{-- Footer top section end --}}
 
 	
 	<!-- Footer section -->
@@ -114,6 +114,6 @@
 	<script src="{{ asset('js/bootstrap.min.js') }} "></script>
 	<script src="{{ asset('js/owl.carousel.min.js') }} "></script>
 	<script src="{{ asset('js/jquery.marquee.min.js') }} "></script>
-	<script src="{{ asset('js/main.js') }} "></script>	
+	<script src="{{ asset('js/main.js') }} "></script>
 
 	

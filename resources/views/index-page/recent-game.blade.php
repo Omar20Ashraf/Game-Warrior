@@ -18,11 +18,15 @@
 							</div>
 						</div>
 						<div class="rgi-content">
-							<h5>{{$recentgame->title}}</h5>
+							<a href="index/recentgame/{{$recentgame->id}}">
+								<h5>{{$recentgame->title}}</h5>
+							</a>
 
 							<p>{{$recentgame->par}} </p>
 
-							<a href="#" class="comment">3 Comments</a>
+							<p class="fi-comment">
+								{{ $recentgame->recentGamecomment->count() }} Comment
+							</p>
 							<div class="rgi-extra">
 								<div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
 									<div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>

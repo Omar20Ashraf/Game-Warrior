@@ -1,3 +1,5 @@
+
+{{-- the model is BlogGame --}}
 			
 <!-- Page info section -->
 
@@ -13,9 +15,13 @@
 							</div>
 						</div>
 						<div class="rgi-content">
-							<h5>{{$game->name}}</h5>
+							<a href="/blog/games/{{$game->id}}">
+								<h5>{{$game->name}}</h5>
+							</a>	
 							<p>{{$game->par}}</p>
-							<a href="#" class="comment">3 Comments</a>
+							<p class="comment">
+								{{ $game->blogGamesComment->count() }} comment
+							</p>
 							<div class="rgi-extra">
 								<div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
 								<div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>

@@ -33,5 +33,6 @@
 	@yield('content')
 
 	@include('elements.footer')
+		
 </body>
 </html>
