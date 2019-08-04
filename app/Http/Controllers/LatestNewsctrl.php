@@ -46,7 +46,7 @@ class LatestNewsctrl extends Controller
 
         ]);
 
-        $product=new LatestNews;
+        $product = new LatestNews;
 
         $product->description=$request->input('description');
         $product->tag_name=$request->input('tag_name');

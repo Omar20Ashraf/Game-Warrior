@@ -11,6 +11,7 @@ use App\BlogGamesComments;
 
 use App\BlogSidebar;
 use App\BlogSidebarComments;
+
 class BlogCommentsCtrl extends Controller
 {
     public function GamesLayout(BlogGame $games){

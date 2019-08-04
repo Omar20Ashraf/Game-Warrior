@@ -39,7 +39,7 @@ class BlogGamesCtrl extends Controller
     {
         //
 
-        $formInput=$request->except('image');
+        $formInput = $request->except('image');
 
         //validation
         $this->validate(request(),[

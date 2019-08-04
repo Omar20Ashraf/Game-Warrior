@@ -13,7 +13,8 @@ use App\GamesComments;
 class GamesCommentsCtrl extends Controller
 {
 
-    public function GamesLayout(Games $games){
+    public function GamesLayout(Games $games)
+    {
         $items=BlogSidebar::all();
         return view('game-page.gamesLayout',compact('games','items'));        
     }

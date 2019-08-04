@@ -62,11 +62,18 @@ Route::get('/blog','PagesCtrl@blog')->name('blog');
 Route::get('/forums','PagesCtrl@forums')->name('forums');
 Route::get('/contact','PagesCtrl@contact')->name('contact');
 
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
 Route::post('/dosend','PagesCtrl@dosend')->name('dosend');
 
-//Authentication
+
+
+
+//User Authentication
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/logout', 'Auth\LoginController@logout');
 
@@ -106,3 +113,21 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function()
 
 
 });
+
+
+
+// // Admin Authentication
+
+// Route::get('admin', 'admin\LoginController@showLoginForm')->name('admin.login');
+
+// Route::post('admin', 'admin\LoginController@login');
+
+// // Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+// Route::post('admin-password/email', 'admin\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
+
+// Route::get('admin-password/reset', 'admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
+
+// Route::post('admin-password/reset', 'admin\ResetPasswordController@reset')->name('admin.password.update');
+
+// Route::get('admin-password/reset/{token}', 'admin\ResetPasswordController@showResetForm')->name('admin.password.reset');

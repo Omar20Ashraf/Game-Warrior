@@ -6,6 +6,7 @@
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
 		{!! Form::open(['route'=>['pageinfo.update',$products->id],'method'=>'Post','files'=>true]) !!}
+		
 		{{ Form::hidden('_method','PUT') }}
 		
 			<div class="form-group">
