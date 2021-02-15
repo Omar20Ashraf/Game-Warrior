@@ -22,9 +22,9 @@ class BlogCommentsCtrl extends Controller
     public function GamesStore(BlogGame $games){
     	$userId = Auth::id();
     	BlogGamesComments::create([
-    		'body' =>request('body'),
-    		'blog_game_id' => $games->id,
-    		'user_id' => $userId
+    		'body'            =>request('body'),
+    		'blog_game_id'    => $games->id,
+    		'user_id'         => $userId
     	]);
 
     	return back();

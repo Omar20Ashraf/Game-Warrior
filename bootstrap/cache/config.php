@@ -1,14 +1,14 @@
 <?php return array (
   'app' => 
   array (
-    'name' => 'Game Warrior',
+    'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://localhost',
+    'url' => 'http://gamewarrior.test/',
     'timezone' => 'UTC',
     'locale' => 'en',
     'fallback_locale' => 'en',
-    'key' => 'base64:BbGF3Dv6TyyBXqwwB8OKp/pzwJFaHVwgOtwV+93Qi5Q=',
+    'key' => 'base64:93Uj1KigNoW0pBoEB5QZl15f63R2P1tqAXUWCa5advY=',
     'cipher' => 'AES-256-CBC',
     'log' => 'single',
     'log_level' => 'debug',
@@ -172,7 +172,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\xampp\\htdocs\\game\\storage\\framework/cache/data',
+        'path' => 'C:\\laragon\\www\\GameWarrior\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -212,7 +212,7 @@
       'sqlite' => 
       array (
         'driver' => 'sqlite',
-        'database' => 'game',
+        'database' => 'gamewarior',
         'prefix' => '',
       ),
       'mysql' => 
@@ -220,9 +220,9 @@
         'driver' => 'mysql',
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'game',
+        'database' => 'gamewarior',
         'username' => 'root',
-        'password' => '',
+        'password' => 'root',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -235,9 +235,9 @@
         'driver' => 'pgsql',
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'game',
+        'database' => 'gamewarior',
         'username' => 'root',
-        'password' => '',
+        'password' => 'root',
         'charset' => 'utf8',
         'prefix' => '',
         'schema' => 'public',
@@ -248,9 +248,9 @@
         'driver' => 'sqlsrv',
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'game',
+        'database' => 'gamewarior',
         'username' => 'root',
-        'password' => '',
+        'password' => 'root',
         'charset' => 'utf8',
         'prefix' => '',
       ),
@@ -277,13 +277,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\game\\storage\\app',
+        'root' => 'C:\\laragon\\www\\GameWarrior\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\game\\storage\\app/public',
-        'url' => 'http://localhost/storage',
+        'root' => 'C:\\laragon\\www\\GameWarrior\\storage\\app/public',
+        'url' => 'http://gamewarrior.test//storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -307,15 +307,15 @@
       'name' => 'Example',
     ),
     'encryption' => NULL,
-    'username' => '630487a92ea30e',
-    'password' => '740ecffa0e616d',
+    'username' => NULL,
+    'password' => NULL,
     'sendmail' => '/usr/sbin/sendmail -bs',
     'markdown' => 
     array (
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\xampp\\htdocs\\game\\resources\\views/vendor/mail',
+        0 => 'C:\\laragon\\www\\GameWarrior\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -395,7 +395,7 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\xampp\\htdocs\\game\\storage\\framework/sessions',
+    'files' => 'C:\\laragon\\www\\GameWarrior\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -414,17 +414,84 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\game\\resources\\views',
+      0 => 'C:\\laragon\\www\\GameWarrior\\resources\\views',
     ),
-    'compiled' => 'C:\\xampp\\htdocs\\game\\storage\\framework\\views',
+    'compiled' => 'C:\\laragon\\www\\GameWarrior\\storage\\framework\\views',
+  ),
+  'flare' => 
+  array (
+    'key' => NULL,
+    'reporting' => 
+    array (
+      'anonymize_ips' => true,
+      'collect_git_information' => false,
+      'report_queries' => true,
+      'maximum_number_of_collected_queries' => 200,
+      'report_query_bindings' => true,
+      'report_view_data' => true,
+      'grouping_type' => NULL,
+      'report_logs' => true,
+      'maximum_number_of_collected_logs' => 200,
+    ),
+    'send_logs_as_events' => true,
+  ),
+  'ignition' => 
+  array (
+    'editor' => 'phpstorm',
+    'theme' => 'light',
+    'enable_share_button' => true,
+    'register_commands' => false,
+    'ignored_solution_providers' => 
+    array (
+      0 => 'Facade\\Ignition\\SolutionProviders\\MissingPackageSolutionProvider',
+    ),
+    'enable_runnable_solutions' => NULL,
+    'remote_sites_path' => '',
+    'local_sites_path' => '',
+    'housekeeping_endpoint_prefix' => '_ignition',
+  ),
+  'cors' => 
+  array (
+    'paths' => 
+    array (
+    ),
+    'allowed_methods' => 
+    array (
+      0 => '*',
+    ),
+    'allowed_origins' => 
+    array (
+      0 => '*',
+    ),
+    'allowed_origins_patterns' => 
+    array (
+    ),
+    'allowed_headers' => 
+    array (
+      0 => '*',
+    ),
+    'exposed_headers' => 
+    array (
+    ),
+    'max_age' => 0,
+    'supports_credentials' => false,
+  ),
+  'trustedproxy' => 
+  array (
+    'proxies' => NULL,
+    'headers' => 94,
   ),
   'tinker' => 
   array (
     'commands' => 
     array (
     ),
+    'alias' => 
+    array (
+    ),
     'dont_alias' => 
     array (
+      0 => 'App\\Nova',
     ),
   ),
 );

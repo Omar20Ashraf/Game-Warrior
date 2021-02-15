@@ -46,7 +46,6 @@ class FirstCtrl extends Controller
             'title' =>'required',
             'par'   =>'required',
             'image' =>'required'
-
         ]);
 
         //upload image

@@ -43,18 +43,18 @@ class BlogGamesCtrl extends Controller
 
         //validation
         $this->validate(request(),[
-            'name' =>'required',
-            'par'   =>'required',
-            'button'   =>'required',
-            'button_color'   =>'required',
-            'image' =>'required'
+            'name'          =>'required',
+            'par'           =>'required',
+            'button'        =>'required',
+            'button_color'  =>'required',
+            'image'         =>'required'
 
         ]);
 
         //upload image
         $image=$request->image;
         if($image){
-            $imageName=$image->getClientOriginalName();
+            $imageName = $image->getClientOriginalName();
             $image->move('images/blog/games',$imageName);
             $formInput['image']=$imageName;
         }
@@ -107,10 +107,10 @@ class BlogGamesCtrl extends Controller
 
         $product=BlogGame::find($id);
 
-        $product->name=$request->input('name');
-        $product->par=$request->input('par');
-        $product->button=$request->input('button');
-        $product->button_color=$request->input('button_color');
+        $product->name              =$request->input('name');
+        $product->par               =$request->input('par');
+        $product->button            =$request->input('button');
+        $product->button_color      =$request->input('button_color');
         $product->save();
 
         return redirect()->route('admin.index')->with('success','Product Edited successfully'); 
