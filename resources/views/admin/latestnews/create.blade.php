@@ -9,17 +9,25 @@
 
 			<div class="form-group">
 				{{ Form::label('description','Description') }}
-				{{ Form::text('description',null,array('class'=>'form-control')) }}
+				{{ Form::text('description',null,array('class'=>'form-control','required'=>'required')) }}
 			</div>
 
 			<div class="form-group">
 				{{ Form::label('tag_name','Tag Name') }}
-				{{ Form::text('tag_name',null,array('class'=>'form-control')) }}
+				{{ Form::text('tag_name',null,array('class'=>'form-control','required'=>'required')) }}
 			</div>
 
 			<div class="form-group">
 				{{ Form::label('tag_color','Tag Color') }}
-				{{ Form::text('tag_color',null,array('class'=>'form-control')) }}
+				<select class="form-control" name="tag_color" required>
+
+				    <option value="">Choose One</option>
+
+				       <option value="new" {{(old('tag_color') == 'new') ? 'selected' : ''}}>new</option>
+				       <option value="strategy" {{(old('tag_color') == 'strategy') ? 'selected' : ''}}>strategy</option>
+				       <option value="racing" {{(old('tag_color') == 'racing') ? 'selected' : ''}}>racing</option>
+				</select>
+
 			</div>
 
 			{{ Form::submit('Create',array('class'=>'btn btn-default')) }}	

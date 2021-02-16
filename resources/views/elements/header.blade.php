@@ -49,7 +49,7 @@
 <!-- Header section end -->
 
 <!-- game info section -->
-	@include('pages.latest_news')	
+	@include('pages.latest_news')
 <!-- game info section -->
 
 

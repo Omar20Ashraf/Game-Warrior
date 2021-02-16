@@ -2,9 +2,10 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use App\LatestNews;
 use Illuminate\Support\Facades\Schema;
-
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -15,6 +16,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(150);
+
+        View::composer('pages.latest_news',function ($view){
+
+            $latestNews = LatestNews::latest()->get();
+            
+            $view->with('latestNews',$latestNews);
+        });
     }
 
     /**

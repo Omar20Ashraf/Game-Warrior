@@ -14,9 +14,18 @@ class CreateRecentGameCommentsTable extends Migration
     public function up()
     {
         Schema::create('recent_game_comments', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id('id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('recentgame_id');
             $table->string('body');
-            $table->integer('recentgame_id');            
+
+            $table->foreign('user_id')
+                  ->references('id')->on('users')
+                  ->onDelete('cascade'); 
+                  
+            $table->foreign('recentgame_id')
+                  ->references('id')->on('recent_games')
+                  ->onDelete('cascade');         
             $table->timestamps();
         });
     }

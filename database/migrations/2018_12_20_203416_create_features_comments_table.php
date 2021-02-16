@@ -14,9 +14,19 @@ class CreateFeaturesCommentsTable extends Migration
     public function up()
     {
         Schema::create('features_comments', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
+            $table->unsignedBigInteger('feature_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('body');
-            $table->integer('game_id');            
+
+            $table->foreign('feature_id')
+                  ->references('id')->on('features')
+                  ->onDelete('cascade');            
+
+            $table->foreign('user_id')
+                  ->references('id')->on('users')
+                  ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

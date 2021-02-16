@@ -14,9 +14,11 @@ class CreateFeaturesTable extends Migration
     public function up()
     {
         Schema::create('features', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
+            $table->string('title');
             $table->string('image');
             $table->string('button');
+            $table->string('button_color');
             $table->string('par');
             $table->integer('page_id')->nullable();
             $table->timestamps();

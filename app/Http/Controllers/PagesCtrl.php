@@ -33,19 +33,18 @@ use App\PersonalInfo;
 class PagesCtrl extends Controller
 {
     //
-    // public function header(){
-    //     $latests=LatestNews::all();
-    //     return view('latestnews.index',compact('latests'));
-    // }
-
 
     public function index()
     {
-        $products=Hero::all();
-        $features=Feature::all();
-        $recentgames=RecentGame::all();
-        $tournaments=Tournaments::all();
-        $recentreviews=RecentReview::all();
+        $products= Hero::latest()->get();
+
+        $features= Feature::latest()->get();
+
+        $recentgames= RecentGame::latest()->get();
+
+        $tournaments= Tournaments::latest()->get();
+
+        $recentreviews= RecentReview::latest()->get();
 
     	return view('pages.index',compact('products','features','recentgames',
                     'tournaments','recentreviews'));
@@ -53,19 +52,19 @@ class PagesCtrl extends Controller
 
     public function games()
     {
-        $firsts=First::all();
-        $games=Games::all();
+        $firsts=First::latest()->get();
+        $games=Games::latest()->get();
 
-        $recentreviews=RecentReview::all();
+        $recentreviews=RecentReview::latest()->get();
 
     	return view('pages.games',compact('firsts','games','recentreviews'));
     } 
 
     public function blog()
     {
-        $firsts=PageInfo::all();
-        $games=BlogGame::all();
-        $items=BlogSidebar::all();
+        $firsts=PageInfo::latest()->get();
+        $games=BlogGame::latest()->get();
+        $items=BlogSidebar::latest()->get();
     	return view('pages.blog',compact('firsts','games','items'));
     } 
 
@@ -78,8 +77,8 @@ class PagesCtrl extends Controller
     public function contact()
     {
 
-        $items=ContactusBackground::all();
-        $personals=PersonalInfo::all();
+        $items=ContactusBackground::latest()->get();
+        $personals=PersonalInfo::latest()->get();
     	return view('pages.contact',compact('items','personals'));
     } 
 

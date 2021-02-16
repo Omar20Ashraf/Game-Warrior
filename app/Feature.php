@@ -5,9 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Feature extends Model
-{
-	protected $fillable=['image','button','par','page_id','title','comments',
-						 'button_color'];
+{   
+
+    protected $table = 'features';
+
+	protected $fillable=['image','button','par','page_id','title','button_color','title'];
 
     public function mainpage()
     {
@@ -18,6 +20,6 @@ class Feature extends Model
     public function featureComment()
     {
 
-    	return $this->hasMany(FeaturesComments::class);
+    	return $this->hasMany(FeaturesComments::class,'feature_id');
     }
  }

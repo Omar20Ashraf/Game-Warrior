@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\LatestNewsRequest;
 use App\LatestNews;
+use Illuminate\Http\Request;
 class LatestNewsctrl extends Controller
 {
     /**
@@ -14,7 +15,8 @@ class LatestNewsctrl extends Controller
     public function index()
     {
         //
-        $items=LatestNews::all();
+        $items = LatestNews::all();
+
         return view('admin.latestnews.show',compact('items'));
     }
 
@@ -35,25 +37,12 @@ class LatestNewsctrl extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LatestNewsRequest $request)
     {
-        
-        //validation
-        $this->validate(request(),[
-            'description'   =>'required',
-            'tag_name'      =>'required',
-            'tag_color'     =>'required'
 
-        ]);
+        LatestNews::create($request->all());
 
-        $product = new LatestNews;
-
-        $product->description=$request->input('description');
-        $product->tag_name=$request->input('tag_name');
-        $product->tag_color=$request->input('tag_color');
-        $product->save();
-        return redirect()->route('latestnews.index')->
-               with('success','Product created successfully');
+        return redirect()->route('latestnews.index')->with('success','Latest News created successfully');
     }
 
     /**
@@ -73,10 +62,9 @@ class LatestNewsctrl extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(LatestNews $latestnews)
     {
-        $products=LatestNews::find($id);
-        return view('admin.latestnews.edit',compact('products'));
+        return view('admin.latestnews.edit',compact('latestnews'));
     }
 
     /**
@@ -86,24 +74,12 @@ class LatestNewsctrl extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(LatestNewsRequest $request, LatestNews $latestnews)
     {
-        //validation
-        $this->validate(request(),[
-            'description'   =>'required',
-            'tag_name'      =>'required',
-            'tag_color'     =>'required'
 
-        ]);
+        $latestnews->update($request->all());
 
-        $product=LatestNews::find($id);
-
-        $product->description=$request->input('description');
-        $product->tag_name=$request->input('tag_name');
-        $product->tag_color=$request->input('tag_color');
-        $product->save();
-
-        return redirect()->route('latestnews.index')->with('success','Product Edited successfully');          
+        return redirect()->route('latestnews.index')->with('success','LatestNews Edited successfully');          
     }
 
     /**
@@ -112,10 +88,10 @@ class LatestNewsctrl extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(LatestNews $latestnews)
     {
-        $products=LatestNews::find($id);
-        $products->delete();
+        $latestnews->delete();
+
         return back();
     }
 }

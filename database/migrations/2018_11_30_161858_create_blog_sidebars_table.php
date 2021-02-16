@@ -15,6 +15,13 @@ class CreateBlogSidebarsTable extends Migration
     {
         Schema::create('blog_sidebars', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('par');
+            $table->string('button');
+            $table->string('button_color');
+            $table->string('image');
+            $table->string('button_class');
+            $table->string('div_class');
             $table->timestamps();
         });
     }

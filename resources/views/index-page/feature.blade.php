@@ -17,6 +17,7 @@
 								</a>
 							</h5>
 							<p>{{$feature->par}} </p>
+							
 							<p class="fi-comment">
 								{{ $feature->featureComment->count() }} Comment
 							</p>

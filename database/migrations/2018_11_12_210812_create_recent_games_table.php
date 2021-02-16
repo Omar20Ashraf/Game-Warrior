@@ -15,9 +15,9 @@ class CreateRecentGamesTable extends Migration
     {
         Schema::create('recent_games', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('head');
-            $table->string('head_button');
-            $table->string('head_button_class');
+            $table->string('head')->nullable();
+            $table->string('head_button')->nullable();
+            $table->string('head_button_class')->nullable();
             $table->string('image');
             $table->string('image_button');
             $table->string('image_button_class');
@@ -25,6 +25,8 @@ class CreateRecentGamesTable extends Migration
             $table->string('par');
             $table->string('comments')->nullable();
             $table->integer('page_id')->nullable();
+            $table->string('background_image')->after('id')
+                            ->default('recent-game-bg.png');
             $table->timestamps();
         });
     }

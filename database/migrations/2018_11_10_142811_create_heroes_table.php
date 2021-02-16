@@ -18,7 +18,6 @@ class CreateHeroesTable extends Migration
             $table->string('title');
             $table->string('par');
             $table->string('image')->nullable();
-            $table->integer('page_id')->nullable();
             $table->timestamps();
         });
     }
