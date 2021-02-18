@@ -6,22 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class BlogPage extends Model
 {
-    public function pageInfo()
-    {
+    // public function pageInfo()
+    // {
+    // 	return $this->hasMany(PageInfo::class);
+    // }
 
-    	return $this->hasMany(PageInfo::class);
-    }
+    // public function blogGame()
+    // {
+    // 	return $this->hasMany(BlogGame::class);
+    // }  
 
-    public function blogGame()
-    {
+    // public function blogSidebar()
+    // {
 
-    	return $this->hasMany(BlogGame::class);
-    }  
-
-    public function blogSidebar()
-    {
-
-    	return $this->hasMany(BlogSidebar::class);
-    }       
+    // 	return $this->hasMany(BlogSidebar::class);
+    // }       
 }
 

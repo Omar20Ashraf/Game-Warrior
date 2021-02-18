@@ -10,13 +10,11 @@ class BlogGamesComments extends Model
 
     public function games()
     {
-
-    	return $this->belongsTo(BlogGame::class);
+    	return $this->belongsTo(BlogGame::class,'blog_game_id');
     }
 
     public function user()
     {
-
-    	return $this->belongsTo(User::class);
+    	return $this->belongsTo(User::class,'user_id');
     } 
 }

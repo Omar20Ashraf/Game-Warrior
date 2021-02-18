@@ -9,4 +9,12 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::get('/main','Api\PageController@index');
+Route::get('/','Api\PageController@index');
+
+Route::get('/games','Api\PageController@games');
+
+Route::get('/blog','Api\PageController@blog');
+
+Route::get('/contact','Api\PageController@contact');
+
+Route::post('/sendEmail','Api\PageController@sendEmail');

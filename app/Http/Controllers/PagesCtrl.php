@@ -70,35 +70,30 @@ class PagesCtrl extends Controller
 
     public function forums()
     {
-
     	return view('pages.forums');
     } 
 
     public function contact()
     {
+        $items = ContactusBackground::latest()->get();
 
-        $items=ContactusBackground::latest()->get();
-        $personals=PersonalInfo::latest()->get();
+        $personals = PersonalInfo::latest()->get();
+
     	return view('pages.contact',compact('items','personals'));
     } 
 
-    public function dosend(Request $request){
+    public function dosend(Request $request)
+    {
         //validation
         $this->validate(request(),[
-            'name' =>'required',
-            'email' =>'required',
-            'subject'  =>'required',
-            'body'  =>'required'
-
+            'name' =>'required|string|max:225',
+            'email' =>'required|email|max:225',
+            'subject'  =>'required|string|max:225',
+            'body'  =>'required|string'
         ]);
 
-        $name=$request->input('name');
-        $email=$request->input('email');
-        $subject=$request->input('subject');
-        $body=$request->input('body');
-
         Mail::to('omaarashraf2020@gmail.com')->
-              send(new ContactUs($name, $email, $subject, $body));
+              send(new ContactUs($request->name, $request->email, $request->subject, $request->body));
 
         return redirect('/contact')->with('success','Message Send Successfully');      
     }

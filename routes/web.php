@@ -4,31 +4,31 @@
 //main page
 Route::get('/','PagesCtrl@index')->name('index');
 
-//index page
-
+//pages
+Route::get('/games','PagesCtrl@games')->name('games');
+Route::get('/blog','PagesCtrl@blog')->name('blog');
+Route::get('/forums','PagesCtrl@forums')->name('forums');
+Route::get('/contact','PagesCtrl@contact')->name('contact');
 
 //Features section in the index page Routes for Comments and single game page
 Route::get('/index/feature/{products}','IndexComments@featureGamesLayout');
-Route::post('/index/feature/{products}/comments',
-			'IndexComments@featurestore');
+Route::post('/index/feature/{products}/comments','IndexComments@featurestore');
 
 //recent Game section in the index page Routes for Comments and single game page
 Route::get('/index/recentgame/{recentgames}','IndexComments@recentGamesLayout');
-Route::post('/index/recentgame/{recentgames}/comments',
-			'IndexComments@recentGamesstore');
+
+Route::post('/index/recentgame/{recentgames}/comments','IndexComments@recentGamesstore');
 
 //recent Review section in the index page Routes for Comments and single game page
-Route::get('/index/recentreview/{recentreviews}',
-			'IndexComments@recentReviewsLayout');
-Route::post('/index/recentreview/{recentreviews}/comments',
-			'IndexComments@recentReviewsStore');
+Route::get('/index/recentreview/{recentreviews}','IndexComments@recentReviewsLayout');
+
+Route::post('/index/recentreview/{recentreviews}/comments','IndexComments@recentReviewsStore');
 
 //Game page
 
 //Games section in the Games page Routes for Comments and single game page
 Route::get('/game/games/{games}','GamesCommentsCtrl@GamesLayout');
-Route::post('/game/games/{games}/comments',
-			'GamesCommentsCtrl@GamesStore');
+Route::post('/game/games/{games}/comments','GamesCommentsCtrl@GamesStore');
 
 
 //blog page
@@ -36,20 +36,12 @@ Route::post('/game/games/{games}/comments',
 //Games Info section in the blog page Routes for Comments and single game page
 Route::get('/blog/games/{games}','BlogCommentsCtrl@GamesLayout');
 
-Route::post('/blog/games/{games}/comments',
-			'BlogCommentsCtrl@GamesStore');
+Route::post('/blog/games/{games}/comments','BlogCommentsCtrl@GamesStore');
 
 //Sidebar section in the blog page Routes for Comments and single game page
 Route::get('/blog/sidebar/{games}','BlogCommentsCtrl@SidebarLayout')->name('blogsidebar');
 
-Route::post('/blog/sidebar/{games}/comments',
-			'BlogCommentsCtrl@SidebarStore');
-
-//pages
-Route::get('/games','PagesCtrl@games')->name('games');
-Route::get('/blog','PagesCtrl@blog')->name('blog');
-Route::get('/forums','PagesCtrl@forums')->name('forums');
-Route::get('/contact','PagesCtrl@contact')->name('contact');
+Route::post('/blog/sidebar/{games}/comments','BlogCommentsCtrl@SidebarStore');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
